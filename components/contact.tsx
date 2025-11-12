@@ -21,19 +21,30 @@ export function Contact() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simular envío (aquí puedes integrar con tu backend o servicio de email)
     try {
-      // Ejemplo: await fetch('/api/contact', { method: 'POST', body: JSON.stringify(formData) })
-      await new Promise((resolve) => setTimeout(resolve, 1500))
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+
+      const data = await response.json()
+
+      if (!response.ok) {
+        throw new Error(data.error || "Error al enviar el mensaje")
+      }
 
       setSubmitStatus("success")
       setFormData({ name: "", email: "", message: "" })
 
-      // Resetear estado después de 3 segundos
-      setTimeout(() => setSubmitStatus("idle"), 3000)
+      // Resetear estado después de 5 segundos
+      setTimeout(() => setSubmitStatus("idle"), 5000)
     } catch (error) {
+      console.error("[v0] Error al enviar mensaje:", error)
       setSubmitStatus("error")
-      setTimeout(() => setSubmitStatus("idle"), 3000)
+      setTimeout(() => setSubmitStatus("idle"), 5000)
     } finally {
       setIsSubmitting(false)
     }
