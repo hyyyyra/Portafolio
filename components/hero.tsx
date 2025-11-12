@@ -46,18 +46,17 @@ export function Hero() {
           </div>
 
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
-            Construyo experiencias digitales elegantes y funcionales con atención al detalle y enfoque en la experiencia
-            del usuario.
+            Resolución de problemas complejos a través de soluciones digitales de alto impacto. Especializado en transformar ideas en productos digitales escalables que generan resultados medibles para tu negocio.
           </p>
 
           <div className="flex gap-3 sm:gap-4 pt-2 sm:pt-4">
             <Button variant="ghost" size="icon" asChild className="hover:scale-110 transition-transform duration-200">
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <a href="https://github.com/hyyra" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                 <Github className="h-5 w-5" />
               </a>
             </Button>
             <Button variant="ghost" size="icon" asChild className="hover:scale-110 transition-transform duration-200">
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/in/fabi%C3%A1n-trapp-rodr%C3%ADguez-655a20286/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                 <Linkedin className="h-5 w-5" />
               </a>
             </Button>
@@ -67,7 +66,7 @@ export function Hero() {
               </a>
             </Button>
             <Button variant="ghost" size="icon" asChild className="hover:scale-110 transition-transform duration-200">
-              <a href="mailto:tu@email.com" aria-label="Email">
+              <a href="mailto:fabiantrappf9@gmail.com" aria-label="Email">
                 <Mail className="h-5 w-5" />
               </a>
             </Button>

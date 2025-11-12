@@ -31,7 +31,7 @@ export function Footer() {
               </a>
             </Button>
             <Button variant="ghost" size="icon" asChild className="h-8 w-8 hover:scale-110 transition-transform">
-              <a href="mailto:tu@email.com" aria-label="Email">
+              <a href="mailto:fabiantrappf9@gmail.com" aria-label="Email">
                 <Mail className="h-4 w-4" />
               </a>
             </Button>
