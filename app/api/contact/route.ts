@@ -2,10 +2,10 @@ import { NextResponse } from "next/server"
 
 export async function POST(request: Request) {
   try {
-    const { name, email, message } = await request.json()
+    const { name, email, telefono, message } = await request.json()
 
     // Validar los datos
-    if (!name || !email || !message) {
+    if (!name || !email || !message || !telefono) {
       return NextResponse.json({ error: "Todos los campos son requeridos" }, { status: 400 })
     }
 
@@ -60,12 +60,13 @@ export async function POST(request: Request) {
         html: `
           <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
             <h2 style="color: #333; border-bottom: 2px solid #0066cc; padding-bottom: 10px;">
-              Nuevo mensaje desde tu portafolio
+              Ha recibido un nuevo mensaje desde su portafolio
             </h2>
             
             <div style="margin: 20px 0;">
               <p style="margin: 10px 0;"><strong>Nombre:</strong> ${name}</p>
               <p style="margin: 10px 0;"><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
+              <p style="margin: 10px 0;"><strong>Contacto telefonico:</strong> ${telefono}</p>
             </div>
             
             <div style="background-color: #f5f5f5; padding: 20px; border-radius: 5px; margin: 20px 0;">

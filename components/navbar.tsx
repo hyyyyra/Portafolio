@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { Menu, X } from "lucide-react"
+import { Menu, X } from 'lucide-react'
+import { NAV_ITEMS } from "@/lib/constants"
 
 export function Navbar() {
   const [activeSection, setActiveSection] = useState("inicio")
@@ -43,14 +44,6 @@ export function Navbar() {
     setIsMobileMenuOpen(false)
   }
 
-  const navItems = [
-    { id: "inicio", label: "Inicio" },
-    { id: "sobre-mi", label: "Sobre mí" },
-    { id: "experiencia", label: "Experiencia" },
-    { id: "proyectos", label: "Proyectos" },
-    { id: "contacto", label: "Contacto" },
-  ]
-
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -58,18 +51,10 @@ export function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <button
-            onClick={() => scrollToSection("inicio")}
-            className="text-lg font-bold tracking-tight hover:text-accent transition-colors"
-          >
-            Portfolio
-          </button>
-
+        <div className="flex items-center justify-center h-16">
           {/* Nav Items - Desktop */}
           <div className="hidden md:flex items-center gap-1">
-            {navItems.map((item) => (
+            {NAV_ITEMS.map((item) => (
               <Button
                 key={item.id}
                 variant="ghost"
@@ -89,7 +74,7 @@ export function Navbar() {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden"
+            className="md:hidden absolute right-4"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -103,7 +88,7 @@ export function Navbar() {
         }`}
       >
         <div className="px-4 pt-2 pb-4 space-y-1 bg-background/95 backdrop-blur-md border-b border-border/40">
-          {navItems.map((item) => (
+          {NAV_ITEMS.map((item) => (
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}

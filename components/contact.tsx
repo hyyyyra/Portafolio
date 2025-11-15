@@ -12,6 +12,7 @@ export function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    telefono: "",
     message: "",
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -37,7 +38,7 @@ export function Contact() {
       }
 
       setSubmitStatus("success")
-      setFormData({ name: "", email: "", message: "" })
+      setFormData({ name: "", email: "", telefono:"", message: "" })
 
       // Resetear estado después de 5 segundos
       setTimeout(() => setSubmitStatus("idle"), 5000)
@@ -100,6 +101,23 @@ export function Contact() {
                 type="email"
                 placeholder="tu@email.com"
                 value={formData.email}
+                onChange={handleChange}
+                required
+                className="bg-background/50 border-border/50 focus:border-foreground/20 transition-colors"
+              />
+            </div>
+
+            <div className="space-y-2">
+              <label htmlFor="telefono" className="text-sm font-medium flex items-center gap-2">
+                <Mail className="h-4 w-4 text-muted-foreground" />
+                Telefono
+              </label>
+              <Input
+                id="telefono"
+                name="telefono"
+                type="telefono"
+                placeholder="+569..."
+                value={formData.telefono}
                 onChange={handleChange}
                 required
                 className="bg-background/50 border-border/50 focus:border-foreground/20 transition-colors"
