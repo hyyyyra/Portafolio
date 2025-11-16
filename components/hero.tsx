@@ -5,6 +5,12 @@ import { Button } from "@/components/ui/button"
 import { useEffect, useRef, useState } from "react"
 
 export function Hero() {
+
+  const URL_GIT = process.env.NEXT_PUBLIC_URL_GIT!;
+  const URL_LINKEDIN = process.env.NEXT_PUBLIC_URL_LINKEDIN
+  const URL_TWITTER = process.env.NEXT_PUBLIC_URL_TWITTER
+  const URL_MAIL = process.env.NEXT_PUBLIC_MAIL
+
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
 
@@ -52,22 +58,22 @@ export function Hero() {
 
           <div className="flex gap-3 sm:gap-4 pt-2 sm:pt-4">
             <Button variant="ghost" size="icon" asChild className="hover:scale-110 transition-transform duration-200">
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <a href={URL_GIT} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                 <Github className="h-5 w-5" />
               </a>
             </Button>
             <Button variant="ghost" size="icon" asChild className="hover:scale-110 transition-transform duration-200">
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <a href={URL_LINKEDIN} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                 <Linkedin className="h-5 w-5" />
               </a>
             </Button>
             <Button variant="ghost" size="icon" asChild className="hover:scale-110 transition-transform duration-200">
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+              <a href={URL_TWITTER} target="_blank" rel="noopener noreferrer" aria-label="Twitter">
                 <Twitter className="h-5 w-5" />
               </a>
             </Button>
             <Button variant="ghost" size="icon" asChild className="hover:scale-110 transition-transform duration-200">
-              <a href="mailto:tu@email.com" aria-label="Email">
+              <a href={`mailto:${URL_MAIL}`} aria-label="Email">
                 <Mail className="h-5 w-5" />
               </a>
             </Button>
