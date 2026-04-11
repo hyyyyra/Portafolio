@@ -40,22 +40,29 @@ export function About() {
           <p
             className={`transition-all duration-700 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
           >
-            Soy Programador y Analista de Sistemas basado en Gran Santiago, Chile. Me apasiona el desarrollo de software web y cuento con sólida experiencia en manejo de bases de datos relacionales, metodologías Scrum y gestión de proyectos correctivos y evolutivos.
+            Hola, soy Fabián — desarrollador Full-Stack con base en Santiago, Chile.
+            Construyo software que funciona, escala y resuelve problemas reales.
           </p>
 
           <p
             className={`transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
           >
-            A lo largo de mi carrera he liderado y colaborado en la gestión de equipos de desarrollo, así como en la resolución de incidentes contingentes mediante eficaces soluciones tecnológicas utilizando un stack moderno y versátil (PHP, SQL, JS, TS, React, CronTab, Linux).
+            Me especializo en el desarrollo de aplicaciones web de punta a punta: desde el diseño
+            de bases de datos relacionales hasta interfaces modernas y reactivas. Trabajo con un
+            stack versátil — <strong>PHP, TypeScript, React, SQL y Linux</strong> — eligiendo siempre
+            la herramienta que mejor se adapta a la necesidad.
           </p>
 
           <p
             className={`transition-all duration-700 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
           >
-            Destaco por mi gran <strong>capacidad de análisis</strong>, habilidad en la <strong>gestión de proyectos</strong> y enfoque en la <strong>integración de equipos</strong> para lograr resultados sobresalientes y adaptables a las diferentes necesidades del entorno.
+            A lo largo de mi carrera he participado en proyectos de distintas escalas y sectores,
+            enfrentando desafíos técnicos complejos con metodologías ágiles y un fuerte criterio analítico.
+            Me interesa entender el negocio detrás del código: eso me permite tomar mejores decisiones
+            técnicas y entregar soluciones que realmente aportan valor.
           </p>
         </div>
       </div>
-    </section>
+    </section >
   )
 }
