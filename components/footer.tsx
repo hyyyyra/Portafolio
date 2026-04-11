@@ -1,13 +1,12 @@
 "use client"
 
-import { Github, Linkedin, Twitter, Mail } from "lucide-react"
+import { Github, Linkedin, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export function Footer() {
 
   const URL_GIT = process.env.NEXT_PUBLIC_URL_GIT
   const URL_LINKEDIN = process.env.NEXT_PUBLIC_URL_LINKEDIN
-  const URL_TWITTER = process.env.NEXT_PUBLIC_URL_TWITTER
   const URL_MAIL = process.env.NEXT_PUBLIC_MAIL
 
   return (
@@ -29,11 +28,6 @@ export function Footer() {
             <Button variant="ghost" size="icon" asChild className="h-8 w-8 hover:scale-110 transition-transform">
               <a href={URL_LINKEDIN} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                 <Linkedin className="h-4 w-4" />
-              </a>
-            </Button>
-            <Button variant="ghost" size="icon" asChild className="h-8 w-8 hover:scale-110 transition-transform">
-              <a href={URL_TWITTER} target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                <Twitter className="h-4 w-4" />
               </a>
             </Button>
             <Button variant="ghost" size="icon" asChild className="h-8 w-8 hover:scale-110 transition-transform">

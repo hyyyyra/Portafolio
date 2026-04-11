@@ -15,7 +15,7 @@ export function Navbar() {
       setIsScrolled(window.scrollY > 20)
 
       // Detectar la sección activa
-      const sections = ["inicio", "sobre-mi", "experiencia", "proyectos", "contacto"]
+      const sections = ["inicio", "sobre-mi", "experiencia", "contacto"]
       const scrollPosition = window.scrollY + 100
 
       for (const section of sections) {
@@ -46,9 +46,8 @@ export function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-background/80 backdrop-blur-md border-b border-border/40" : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-background/80 backdrop-blur-md border-b border-border/40" : "bg-transparent"
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-center h-16">
@@ -59,9 +58,8 @@ export function Navbar() {
                 key={item.id}
                 variant="ghost"
                 onClick={() => scrollToSection(item.id)}
-                className={`relative transition-all duration-200 ${
-                  activeSection === item.id ? "text-foreground" : "text-muted-foreground hover:text-foreground"
-                }`}
+                className={`relative transition-all duration-200 ${activeSection === item.id ? "text-foreground" : "text-muted-foreground hover:text-white"
+                  }`}
               >
                 {item.label}
                 {activeSection === item.id && (
@@ -83,20 +81,18 @@ export function Navbar() {
       </div>
 
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-          isMobileMenuOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
-        }`}
+        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${isMobileMenuOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
+          }`}
       >
         <div className="px-4 pt-2 pb-4 space-y-1 bg-background/95 backdrop-blur-md border-b border-border/40">
           {NAV_ITEMS.map((item) => (
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className={`w-full text-left px-4 py-3 rounded-lg transition-all duration-200 ${
-                activeSection === item.id
-                  ? "bg-accent/10 text-foreground font-medium"
-                  : "text-muted-foreground hover:bg-accent/5 hover:text-foreground"
-              }`}
+              className={`w-full text-left px-4 py-3 rounded-lg transition-all duration-200 ${activeSection === item.id
+                ? "bg-accent/10 text-foreground font-medium"
+                : "text-muted-foreground hover:bg-accent/5 hover:text-white"
+                }`}
             >
               {item.label}
             </button>

@@ -1,6 +1,6 @@
 "use client"
 
-import { Github, Linkedin, Mail, Twitter } from "lucide-react"
+import { Github, Linkedin, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useEffect, useRef, useState } from "react"
 
@@ -8,7 +8,6 @@ export function Hero() {
 
   const URL_GIT = process.env.NEXT_PUBLIC_URL_GIT!;
   const URL_LINKEDIN = process.env.NEXT_PUBLIC_URL_LINKEDIN
-  const URL_TWITTER = process.env.NEXT_PUBLIC_URL_TWITTER
   const URL_MAIL = process.env.NEXT_PUBLIC_MAIL
 
   const [isVisible, setIsVisible] = useState(false)
@@ -48,12 +47,11 @@ export function Hero() {
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-balance">
               Fabián Trapp Rodríguez
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground">Desarrollador Full Stack</p>
+            <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground">Programador y Analista de Sistemas</p>
           </div>
 
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
-            Construyo experiencias digitales elegantes y funcionales con atención al detalle y enfoque en la experiencia
-            del usuario.
+            Desarrollo de software web, manejo de base de datos relacionales y gestión de incidentes tecnológicos para brindar soluciones de alto valor. (PHP, SQL, JS, TS, React).
           </p>
 
           <div className="flex gap-3 sm:gap-4 pt-2 sm:pt-4">
@@ -65,11 +63,6 @@ export function Hero() {
             <Button variant="ghost" size="icon" asChild className="hover:scale-110 transition-transform duration-200">
               <a href={URL_LINKEDIN} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                 <Linkedin className="h-5 w-5" />
-              </a>
-            </Button>
-            <Button variant="ghost" size="icon" asChild className="hover:scale-110 transition-transform duration-200">
-              <a href={URL_TWITTER} target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                <Twitter className="h-5 w-5" />
               </a>
             </Button>
             <Button variant="ghost" size="icon" asChild className="hover:scale-110 transition-transform duration-200">

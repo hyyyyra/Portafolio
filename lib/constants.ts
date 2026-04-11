@@ -12,16 +12,15 @@ export const NAV_ITEMS = [
   { id: "inicio", label: "Inicio" },
   { id: "sobre-mi", label: "Sobre mí" },
   { id: "experiencia", label: "Experiencia" },
-  { id: "proyectos", label: "Proyectos" },
+  //{ id: "proyectos", label: "Proyectos" },
   { id: "contacto", label: "Contacto" },
 ] as const
 
 // Links de redes sociales
 export const SOCIAL_LINKS = {
-  github: "https://github.com/tuusuario",
-  linkedin: "https://linkedin.com/in/tuusuario",
-  twitter: "https://twitter.com/tuusuario",
-  email: "mailto:tu@email.com",
+  github: "https://github.com/hyyyyra",
+  linkedin: "https://www.linkedin.com/in/fabi%C3%A1n-trapp-rodr%C3%ADguez-655a20286/",
+  email: "mailto:fabiantrappf9@gmail.com",
 } as const
 
 // IDs de secciones para navegación
@@ -29,7 +28,7 @@ export const SECTION_IDS = {
   hero: "inicio",
   about: "sobre-mi",
   experience: "experiencia",
-  projects: "proyectos",
+  //projects: "proyectos",
   contact: "contacto",
 } as const
 
