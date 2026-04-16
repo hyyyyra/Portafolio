@@ -20,12 +20,12 @@ Para que el formulario de contacto funcione correctamente, sigue estos pasos:
 En v0, ve a la sección **Vars** en el sidebar izquierdo y agrega:
 
 \`\`\`
-RESEND_API_KEY=tu_api_key_aquí
+NEXT_PUBLIC_RESEND_API_KEY=tu_api_key_aquí
 YOUR_EMAIL=tucorreo@ejemplo.com
 \`\`\`
 
 **Importante:**
-- `RESEND_API_KEY`: La API key que copiaste de Resend
+- `NEXT_PUBLIC_RESEND_API_KEY`: La API key que copiaste de Resend
 - `YOUR_EMAIL`: El correo donde quieres recibir los mensajes
 
 ## 4. Verificar Dominio (Opcional pero Recomendado)

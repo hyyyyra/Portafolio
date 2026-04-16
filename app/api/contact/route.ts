@@ -15,13 +15,13 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Email inválido" }, { status: 400 })
     }
 
-    const RESEND_API_KEY = process.env.RESEND_API_KEY
-    const YOUR_EMAIL = process.env.MAIL_PERSONAL
+    const NEXT_PUBLIC_RESEND_API_KEY = process.env.NEXT_PUBLIC_RESEND_API_KEY
+    const YOUR_EMAIL = process.env.NEXT_PUBLIC_MAIL_PERSONAL
 
     console.log(YOUR_EMAIL);
-    console.log(RESEND_API_KEY);
+    console.log(NEXT_PUBLIC_RESEND_API_KEY);
 
-    if (!RESEND_API_KEY || !YOUR_EMAIL) {
+    if (!NEXT_PUBLIC_RESEND_API_KEY || !YOUR_EMAIL) {
       console.log("=".repeat(60))
       console.log("📧 NUEVO MENSAJE DE CONTACTO (MODO PRUEBA)")
       console.log("=".repeat(60))
@@ -31,7 +31,7 @@ export async function POST(request: Request) {
       console.log(`💬 Mensaje: ${message}`)
       console.log("=".repeat(60))
       console.log("⚠️  Para recibir emails reales, configura:")
-      console.log("   1. RESEND_API_KEY (obtén una en resend.com)")
+      console.log("   1. NEXT_PUBLIC_RESEND_API_KEY (obtén una en resend.com)")
       console.log("   2. YOUR_EMAIL (tu correo de destino)")
       console.log("   3. Ve a la sección 'Vars' en el sidebar izquierdo")
       console.log("=".repeat(60))
@@ -52,7 +52,7 @@ export async function POST(request: Request) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${RESEND_API_KEY}`,
+        Authorization: `Bearer ${NEXT_PUBLIC_RESEND_API_KEY}`,
       },
       body: JSON.stringify({
         from: "Portafolio <onboarding@resend.dev>",

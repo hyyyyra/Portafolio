@@ -185,7 +185,7 @@ export function Contact() {
             <div className="space-y-2 animate-in fade-in duration-300">
               <p className="text-sm text-red-600 dark:text-red-400 text-center sm:text-left">{errorMessage}</p>
               <p className="text-xs text-muted-foreground text-center sm:text-left">
-                Configura RESEND_API_KEY y YOUR_EMAIL en la sección Vars para habilitar el envío de emails.
+                Configura NEXT_PUBLIC_RESEND_API_KEY y YOUR_EMAIL en la sección Vars para habilitar el envío de emails.
               </p>
             </div>
           )}
