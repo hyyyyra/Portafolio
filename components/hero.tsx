@@ -6,9 +6,12 @@ import { useEffect, useRef, useState } from "react"
 
 const TERMINAL_LINES = [
   { prefix: "$", command: "node greeting.js", delay: 400 },
-  { prefix: ">", command: 'Greeting: "Hola, mi nombre es Fabián, y me especializo en crear soluciones digitales frente a desafíos complejos."', delay: 900, isOutput: true },
-  { prefix: "$", command: "■", delay: 1000, isCursor: true },
+  { prefix: ">", command: "", delay: 900, isOutput: true },
+  { prefix: "$", command: "■", delay: 0, isCursor: true },
 ]
+
+const OUTPUT_TEXT = 'Greeting: "Hola, mi nombre es Fabián, y me especializo en crear soluciones digitales frente a desafíos complejos."'
+const TYPING_SPEED = 40
 
 export function Hero() {
 
@@ -18,6 +21,8 @@ export function Hero() {
 
   const [isVisible, setIsVisible] = useState(false)
   const [visibleLines, setVisibleLines] = useState<number[]>([])
+  const [typedText, setTypedText] = useState("")
+  const [typingDone, setTypingDone] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
@@ -43,19 +48,34 @@ export function Hero() {
 
   useEffect(() => {
     if (!isVisible) return
-    TERMINAL_LINES.forEach((line, index) => {
-      setTimeout(() => {
-        setVisibleLines((prev) => [...prev, index])
-      }, line.delay)
-    })
+
+    setTimeout(() => setVisibleLines([0]), 400)
+
+    setTimeout(() => {
+      setVisibleLines((prev) => [...prev, 1])
+      let i = 0
+      const interval = setInterval(() => {
+        i++
+        setTypedText(OUTPUT_TEXT.slice(0, i))
+        if (i >= OUTPUT_TEXT.length) {
+          clearInterval(interval)
+          setTypingDone(true)
+        }
+      }, TYPING_SPEED)
+    }, 900)
   }, [isVisible])
+
+  useEffect(() => {
+    if (typingDone) {
+      setVisibleLines((prev) => [...prev, 2])
+    }
+  }, [typingDone])
 
   return (
     <section
       ref={sectionRef}
       className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16 sm:py-20 overflow-hidden"
     >
-      {/* Background glow for ambient visual */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-6xl w-full grid lg:grid-cols-2 gap-12 lg:gap-8 items-center relative z-10">
@@ -106,8 +126,7 @@ export function Hero() {
               {TERMINAL_LINES.map((line, index) => (
                 <div
                   key={index}
-                  className={`transition-all duration-300 ${visibleLines.includes(index) ? "opacity-100" : "opacity-0"
-                    }`}
+                  className={`transition-all duration-300 ${visibleLines.includes(index) ? "opacity-100" : "opacity-0"}`}
                 >
                   {line.isCursor ? (
                     <span className="flex items-center gap-2">
@@ -115,7 +134,9 @@ export function Hero() {
                       <span className="w-2.5 h-5 bg-primary animate-pulse inline-block" />
                     </span>
                   ) : line.isOutput ? (
-                    <p className="text-muted-foreground text-sm pl-4 leading-relaxed">{line.command}</p>
+                    <p className="text-muted-foreground text-sm pl-4 leading-relaxed">
+                      {typedText}
+                    </p>
                   ) : (
                     <p>
                       <span className="text-primary font-semibold">{line.prefix} </span>
