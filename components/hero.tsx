@@ -15,9 +15,9 @@ const TYPING_SPEED = 40
 
 export function Hero() {
 
-  const URL_GIT = process.env.NEXT_PUBLIC_URL_GIT!;
+  const URL_GIT = process.env.NEXT_PUBLIC_URL_GIT;
   const URL_LINKEDIN = process.env.NEXT_PUBLIC_URL_LINKEDIN
-  const URL_MAIL = process.env.NEXT_PUBLIC_MAIL
+  const URL_MAIL = process.env.NEXT_PUBLIC_MAIL_PERSONAL
 
   const [isVisible, setIsVisible] = useState(false)
   const [visibleLines, setVisibleLines] = useState<number[]>([])

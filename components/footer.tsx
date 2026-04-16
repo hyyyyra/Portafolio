@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 export function Footer() {
 
   const URL_GIT = process.env.NEXT_PUBLIC_URL_GIT
-  const URL_LINKEDIN = process.env.NEXT_PUBLIC_URL_LINKEDIN
+  const URL_LINKEDIN = process.env.URL_LINKEDIN
   const URL_MAIL = process.env.NEXT_PUBLIC_MAIL
 
   return (

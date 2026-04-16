@@ -16,7 +16,10 @@ export async function POST(request: Request) {
     }
 
     const RESEND_API_KEY = process.env.RESEND_API_KEY
-    const YOUR_EMAIL = process.env.YOUR_EMAIL
+    const YOUR_EMAIL = process.env.MAIL_PERSONAL
+
+    console.log(YOUR_EMAIL);
+    console.log(RESEND_API_KEY);
 
     if (!RESEND_API_KEY || !YOUR_EMAIL) {
       console.log("=".repeat(60))
@@ -57,164 +60,120 @@ export async function POST(request: Request) {
         reply_to: email,
         subject: `💼 Nuevo contacto de ${name}`,
         html: `
-          <!DOCTYPE html>
-          <html lang="es">
-            <head>
-              <meta charset="UTF-8">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <style>
-                body {
-                  margin: 0;
-                  padding: 0;
-                  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-                  background-color: #f8f9fa;
-                  -webkit-font-smoothing: antialiased;
-                  -moz-osx-font-smoothing: grayscale;
-                }
-                .container {
-                  max-width: 600px;
-                  margin: 40px auto;
-                  background: #ffffff;
-                  border-radius: 12px;
-                  overflow: hidden;
-                  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-                }
-                .header {
-                  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-                  padding: 40px 32px;
-                  text-align: center;
-                }
-                .header h1 {
-                  margin: 0;
-                  color: #ffffff;
-                  font-size: 24px;
-                  font-weight: 600;
-                  letter-spacing: -0.025em;
-                }
-                .header p {
-                  margin: 8px 0 0;
-                  color: rgba(255, 255, 255, 0.7);
-                  font-size: 14px;
-                }
-                .content {
-                  padding: 32px;
-                }
-                .info-card {
-                  background: #f8fafc;
-                  border-radius: 8px;
-                  padding: 24px;
-                  margin-bottom: 24px;
-                  border-left: 4px solid #3b82f6;
-                }
-                .info-row {
-                  display: flex;
-                  align-items: flex-start;
-                  margin-bottom: 16px;
-                }
-                .info-row:last-child {
-                  margin-bottom: 0;
-                }
-                .info-label {
-                  font-size: 12px;
-                  font-weight: 600;
-                  text-transform: uppercase;
-                  letter-spacing: 0.05em;
-                  color: #64748b;
-                  min-width: 90px;
-                  margin-top: 2px;
-                }
-                .info-value {
-                  font-size: 15px;
-                  color: #0f172a;
-                  flex: 1;
-                }
-                .info-value a {
-                  color: #3b82f6;
-                  text-decoration: none;
-                  transition: color 0.2s;
-                }
-                .info-value a:hover {
-                  color: #2563eb;
-                }
-                .message-box {
-                  background: #ffffff;
-                  border: 2px solid #e2e8f0;
-                  border-radius: 8px;
-                  padding: 24px;
-                  margin-top: 24px;
-                }
-                .message-label {
-                  font-size: 12px;
-                  font-weight: 600;
-                  text-transform: uppercase;
-                  letter-spacing: 0.05em;
-                  color: #64748b;
-                  margin-bottom: 12px;
-                }
-                .message-text {
-                  font-size: 15px;
-                  line-height: 1.6;
-                  color: #334155;
-                  white-space: pre-wrap;
-                  word-wrap: break-word;
-                }
-                .footer {
-                  background: #f8fafc;
-                  padding: 24px 32px;
-                  text-align: center;
-                  border-top: 1px solid #e2e8f0;
-                }
-                .badge {
-                  display: inline-block;
-                  background: #dbeafe;
-                  color: #1e40af;
-                  padding: 4px 12px;
-                  border-radius: 12px;
-                  font-size: 12px;
-                  font-weight: 600;
-                  margin-top: 8px;
-                }
-              </style>
-            </head>
-            <body>
-              <div class="container">
-                <div class="header">
-                  <h1>Nuevo mensaje recibido</h1>
-                  <p>Alguien te contactó desde tu portafolio</p>
-                </div>
-                
-                <div class="content">
-                  <div class="info-card">
-                    <div class="info-row">
-                      <div class="info-label">Nombre</div>
-                      <div class="info-value">${name}</div>
-                    </div>
-                    
-                    <div class="info-row">
-                      <div class="info-label">Email</div>
-                      <div class="info-value">
-                        <a href="mailto:${email}">${email}</a>
-                      </div>
-                    </div>
-                    
-                    ${telefono ? `
-                    <div class="info-row">
-                      <div class="info-label">Teléfono</div>
-                      <div class="info-value">
-                        <a href="tel:${telefono}">${telefono}</a>
-                      </div>
-                    </div>
-                    ` : ''}
-                  </div>
-                  
-                  <div class="message-box">
-                    <div class="message-label">Mensaje</div>
-                    <div class="message-text">${message}</div>
-                  </div>
-                </div>
+        <!DOCTYPE html>
+        <html lang="es">
+          <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <style>
+              * { box-sizing: border-box; margin: 0; padding: 0; }
+              body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+                background-color: #f5f5f3;
+                -webkit-font-smoothing: antialiased;
+              }
+              .wrap {
+                max-width: 520px;
+                margin: 40px auto;
+                background: #ffffff;
+                border: 1px solid #e0e0e0;
+                border-radius: 4px;
+                overflow: hidden;
+              }
+              .header {
+                padding: 32px 36px 24px;
+                border-bottom: 1px solid #e8e8e8;
+              }
+              .header-label {
+                font-size: 11px;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.08em;
+                color: #999;
+                margin-bottom: 4px;
+              }
+              .header-name {
+                font-size: 20px;
+                font-weight: 500;
+                color: #111;
+                letter-spacing: -0.02em;
+              }
+              .meta {
+                padding: 28px 36px;
+                border-bottom: 1px solid #e8e8e8;
+              }
+              table { width: 100%; border-collapse: collapse; }
+              .label-cell {
+                padding: 8px 0;
+                font-size: 11px;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.06em;
+                color: #aaa;
+                width: 80px;
+                vertical-align: top;
+              }
+              .value-cell {
+                padding: 8px 0;
+                font-size: 14px;
+                color: #333;
+              }
+              .value-cell a { color: #2563eb; text-decoration: none; }
+              .message-section { padding: 28px 36px; }
+              .message-label {
+                font-size: 11px;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.06em;
+                color: #aaa;
+                margin-bottom: 12px;
+              }
+              .message-text {
+                font-size: 14px;
+                line-height: 1.75;
+                color: #333;
+                white-space: pre-wrap;
+                word-wrap: break-word;
+              }
+              .footer {
+                padding: 16px 36px 20px;
+                border-top: 1px solid #e8e8e8;
+              }
+              .footer-text {
+                font-size: 11px;
+                color: #bbb;
+              }
+            </style>
+          </head>
+          <body>
+            <div class="wrap">
+              <div class="header">
+                <p class="header-label">Nuevo contacto</p>
+                <p class="header-name">${name}</p>
               </div>
-            </body>
-          </html>
+              <div class="meta">
+                <table>
+                  <tr>
+                    <td class="label-cell">Email</td>
+                    <td class="value-cell"><a href="mailto:${email}">${email}</a></td>
+                  </tr>
+                  ${telefono ? `
+                  <tr>
+                    <td class="label-cell">Teléfono</td>
+                    <td class="value-cell"><a href="tel:${telefono}">${telefono}</a></td>
+                  </tr>` : ''}
+                </table>
+              </div>
+              <div class="message-section">
+                <p class="message-label">Mensaje</p>
+                <p class="message-text">${message}</p>
+              </div>
+              <div class="footer">
+                <p class="footer-text">Enviado desde tu portafolio</p>
+              </div>
+            </div>
+          </body>
+        </html>
         `,
       }),
     })
