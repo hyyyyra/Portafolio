@@ -6,8 +6,8 @@ import { useEffect, useRef, useState } from "react"
 
 const TERMINAL_LINES = [
   { prefix: "$", command: "node greeting.js", delay: 400 },
-  { prefix: ">", command: 'Greeting: "Hola, soy Fabián. Especialista en crear aplicaciones web, integración de APIs y optimización de bases de datos."', delay: 900, isOutput: true },
-  { prefix: "$", command: "■", delay: 1500, isCursor: true },
+  { prefix: ">", command: 'Greeting: "Hola, mi nombre es Fabián, y me especializo en crear soluciones digitales frente a desafíos complejos."', delay: 900, isOutput: true },
+  { prefix: "$", command: "■", delay: 1000, isCursor: true },
 ]
 
 export function Hero() {
@@ -66,7 +66,7 @@ export function Hero() {
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-balance">
               Fabián Trapp Rodríguez
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground">Desarrollador Analista de Sistemas Full Stack</p>
+            <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground">Desarrollador de Sistemas Full Stack</p>
           </div>
 
           <div className="flex gap-2 sm:gap-1 pt-1 sm:pt-1">

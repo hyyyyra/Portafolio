@@ -8,8 +8,8 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Fabian Trapp Rodríguez",
-  description: "Desarrollador Full Stack especializado en crear experiencias digitales elegantes y funcionales",
+  title: "Fabián Trapp Rodríguez",
+  description: "Desarollador FullStack | Soluciones tecnologicas a desafíos complejos",
   generator: "v0.app",
   icons: {
     icon: [

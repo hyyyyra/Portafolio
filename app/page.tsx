@@ -17,10 +17,10 @@ export default function Home() {
         <div id="sobre-mi">
           <About />
         </div>
-        <div id="experiencia">
+        {/*<div id="experiencia">
           <Experience />
         </div>
-        {/* <div id="proyectos">
+        <div id="proyectos">
           <Projects />
         </div> */}
         <div id="contacto">
