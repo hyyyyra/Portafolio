@@ -54,13 +54,13 @@ export function About() {
 
           <p
             className={`transition-all duration-700 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
-          >
+        /*  >
             Me especializo en el desarrollo de aplicaciones web de punta a punta: desde el diseño
             de bases de datos relacionales hasta interfaces modernas y reactivas. Trabajo con un
             stack versátil — <strong>PHP, TypeScript, React, SQL y Linux</strong> — eligiendo siempre
             la herramienta que mejor se adapta a la necesidad.
           </p>
-        </div>
+        </div>*/
       </div>
     </section >
   )
