@@ -51,15 +51,16 @@ export function About() {
             destacando el servicio público, en donde me he pragmatizado como Desarrollador Analista dentro de la división TI del Servicio de Evaluación Ambiental (SEA).
             Enfrentando desafíos técnicos complejos con metodologías ágiles y un fuerte criterio analítico.
           </p>
-
-          <p
+          
+          {/*<p
             className={`transition-all duration-700 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
           >
             Me especializo en el desarrollo de aplicaciones web de punta a punta: desde el diseño
             de bases de datos relacionales hasta interfaces modernas y reactivas. Trabajo con un
             stack versátil — <strong>PHP, TypeScript, React, SQL y Linux</strong> — eligiendo siempre
             la herramienta que mejor se adapta a la necesidad.
-          </p>
+          </p>*/}
+          
         </div>
       </div>
     </section >
