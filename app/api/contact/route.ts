@@ -19,7 +19,7 @@ export async function POST(request: Request) {
     }
 
     const NEXT_PUBLIC_RESEND_API_KEY = process.env.NEXT_PUBLIC_RESEND_API_KEY
-    const YOUR_EMAIL = process.env.NEXT_PUBLIC_MAIL_PERSONAL
+    const NEXT_PUBLIC_MAIL = process.env.NEXT_PUBLIC_MAIL_PERSONAL
 
     if (!NEXT_PUBLIC_RESEND_API_KEY || !YOUR_EMAIL) {
       console.log("=".repeat(60))
