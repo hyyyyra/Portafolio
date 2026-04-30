@@ -18,7 +18,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Email inválido" }, { status: 400 })
     }
 
-    const NEXT_PUBLIC_RESEND_API_KEY = process.env.NEXT_PUBLIC_RESEND_API_KEY
+    const NEXT_PUBLIC_RESEND_API_KEY = process.env.RESEND_API_KEY
     const YOUR_EMAIL = process.env.NEXT_PUBLIC_MAIL
 
     if (!NEXT_PUBLIC_RESEND_API_KEY || !YOUR_EMAIL) {
