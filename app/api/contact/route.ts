@@ -18,15 +18,10 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Email inválido" }, { status: 400 })
     }
 
-<<<<<<< HEAD
     const NEXT_PUBLIC_RESEND_API_KEY = process.env.NEXT_PUBLIC_RESEND_API_KEY
     const YOUR_EMAIL = process.env.NEXT_PUBLIC_MAIL_PERSONAL
-=======
-    const RESEND_API_KEY = process.env.RESEND_API_KEY
-    const YOUR_EMAIL = process.env.MAIL_PERSONAL
->>>>>>> efcc3ca166433599d98deb4c59443160024be78f
 
-    if (!RESEND_API_KEY || !YOUR_EMAIL) {
+    if (!NEXT_PUBLIC_RESEND_API_KEY || !YOUR_EMAIL) {
       console.log("=".repeat(60))
       console.log("📧 NUEVO MENSAJE DE CONTACTO (MODO PRUEBA)")
       console.log("=".repeat(60))
@@ -56,7 +51,7 @@ export async function POST(request: Request) {
     )
 
     // Enviar email con el SDK de Resend
-    const resend = new Resend(RESEND_API_KEY)
+    const resend = new Resend(NEXT_PUBLIC_RESEND_API_KEY)
 
     const { data, error } = await resend.emails.send({
       from: "Portafolio <onboarding@resend.dev>",

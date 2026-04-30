@@ -19,15 +19,26 @@ interface ContactEmailProps {
 }
 
 export function ContactEmail({ name, email, telefono, message }: ContactEmailProps) {
+  const now = new Date()
+  const fecha = now.toLocaleDateString("es-ES", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  })
+
   return (
     <Html lang="es">
-      <Head />
+      <Head>
+        <style>{`
+          @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+        `}</style>
+      </Head>
       <Body style={styles.body}>
         <Container style={styles.wrap}>
 
           {/* Header */}
           <Section style={styles.header}>
-            <Text style={styles.headerLabel}>Nuevo contacto</Text>
+            <Text style={styles.eyebrow}>Tienes un nuevo mensaje de:</Text>
             <Text style={styles.headerName}>{name}</Text>
           </Section>
 
@@ -35,43 +46,52 @@ export function ContactEmail({ name, email, telefono, message }: ContactEmailPro
 
           {/* Meta */}
           <Section style={styles.meta}>
-            <Row>
-              <Column style={styles.labelCell}>
-                <Text style={styles.label}>Email</Text>
+            <Row style={styles.metaRow}>
+              <Column style={styles.metaLabel}>
+                <Text style={styles.label}>De</Text>
               </Column>
-              <Column style={styles.valueCell}>
-                <Link href={`mailto:${email}`} style={styles.link}>
+              <Column>
+                <Link href={`mailto:${email}`} style={styles.metaValue}>
                   {email}
                 </Link>
               </Column>
             </Row>
             {telefono && (
-              <Row>
-                <Column style={styles.labelCell}>
-                  <Text style={styles.label}>Teléfono</Text>
+              <Row style={styles.metaRow}>
+                <Column style={styles.metaLabel}>
+                  <Text style={styles.label}>Tel</Text>
                 </Column>
-                <Column style={styles.valueCell}>
-                  <Link href={`tel:${telefono}`} style={styles.link}>
+                <Column>
+                  <Link href={`tel:${telefono}`} style={styles.metaValue}>
                     {telefono}
                   </Link>
                 </Column>
               </Row>
             )}
+            <Row style={styles.metaRow}>
+              <Column style={styles.metaLabel}>
+                <Text style={styles.label}>Fecha</Text>
+              </Column>
+              <Column>
+                <Text style={styles.metaValuePlain}>{fecha}</Text>
+              </Column>
+            </Row>
           </Section>
 
           <Hr style={styles.divider} />
 
-          {/* Mensaje */}
+          {/* Message */}
           <Section style={styles.messageSection}>
-            <Text style={styles.label}>Mensaje</Text>
             <Text style={styles.messageText}>{message}</Text>
           </Section>
 
           <Hr style={styles.divider} />
 
-          {/* Footer */}
-          <Section style={styles.footer}>
-            <Text style={styles.footerText}>Enviado desde tu portafolio</Text>
+          {/* CTA */}
+          <Section style={styles.ctaSection}>
+            <Link href={`mailto:${email}`} style={styles.ctaButton}>
+              Responder
+            </Link>
           </Section>
 
         </Container>
@@ -82,82 +102,117 @@ export function ContactEmail({ name, email, telefono, message }: ContactEmailPro
 
 const styles: Record<string, React.CSSProperties> = {
   body: {
-    fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif",
-    backgroundColor: "#f5f5f3",
+    fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif",
+    backgroundColor: "#f5f5f7",
     WebkitFontSmoothing: "antialiased",
     margin: 0,
-    padding: 0,
+    padding: "48px 0",
   },
   wrap: {
-    maxWidth: "520px",
-    margin: "40px auto",
+    maxWidth: "480px",
+    margin: "0 auto",
     backgroundColor: "#ffffff",
-    border: "1px solid #e0e0e0",
-    borderRadius: "4px",
+    borderRadius: "18px",
     overflow: "hidden",
   },
+
+  /* Header */
   header: {
-    padding: "32px 36px 24px",
+    padding: "40px 40px 32px",
   },
-  headerLabel: {
-    fontSize: "11px",
-    fontWeight: 600,
-    textTransform: "uppercase",
-    letterSpacing: "0.08em",
-    color: "#999",
-    margin: "0 0 4px 0",
+  eyebrow: {
+    fontSize: "13px",
+    fontWeight: 400,
+    color: "#6e6e73",
+    margin: "0 0 6px 0",
+    letterSpacing: "0",
   },
   headerName: {
-    fontSize: "20px",
-    fontWeight: 500,
-    color: "#111",
-    letterSpacing: "-0.02em",
+    fontSize: "26px",
+    fontWeight: 600,
+    color: "#1d1d1f",
+    letterSpacing: "-0.03em",
+    lineHeight: "1.15",
     margin: 0,
   },
+
   divider: {
-    borderColor: "#e8e8e8",
+    borderColor: "#f2f2f2",
     margin: 0,
   },
+
+  /* Meta */
   meta: {
-    padding: "28px 36px",
+    padding: "24px 40px",
   },
-  labelCell: {
-    width: "80px",
-    verticalAlign: "top",
+  metaRow: {
+    marginBottom: "2px",
   },
-  valueCell: {
-    verticalAlign: "top",
+  metaLabel: {
+    width: "44px",
+    verticalAlign: "middle",
   },
   label: {
-    fontSize: "11px",
-    fontWeight: 600,
-    textTransform: "uppercase",
-    letterSpacing: "0.06em",
-    color: "#aaa",
-    margin: "8px 0",
+    fontSize: "13px",
+    fontWeight: 400,
+    color: "#6e6e73",
+    margin: "6px 0",
   },
-  link: {
-    fontSize: "14px",
-    color: "#2563eb",
+  metaValue: {
+    fontSize: "13px",
+    fontWeight: 400,
+    color: "#0066cc",
     textDecoration: "none",
+    lineHeight: "1",
+    display: "block",
+    padding: "6px 0",
   },
+  metaValuePlain: {
+    fontSize: "13px",
+    fontWeight: 400,
+    color: "#1d1d1f",
+    margin: "6px 0",
+  },
+
+  /* Message */
   messageSection: {
-    padding: "28px 36px",
+    padding: "28px 40px",
   },
   messageText: {
-    fontSize: "14px",
-    lineHeight: "1.75",
-    color: "#333",
+    fontSize: "15px",
+    fontWeight: 300,
+    lineHeight: "1.7",
+    color: "#1d1d1f",
     whiteSpace: "pre-wrap",
     wordWrap: "break-word",
-    margin: "12px 0 0 0",
+    margin: 0,
   },
+
+  /* CTA */
+  ctaSection: {
+    padding: "28px 40px",
+  },
+  ctaButton: {
+    display: "inline-block",
+    fontSize: "15px",
+    fontWeight: 400,
+    color: "#ffffff",
+    backgroundColor: "#0066cc",
+    padding: "11px 24px",
+    borderRadius: "980px",
+    textDecoration: "none",
+    letterSpacing: "-0.01em",
+  },
+
+  /* Footer */
   footer: {
-    padding: "16px 36px 20px",
+    padding: "0 40px 32px",
   },
   footerText: {
-    fontSize: "11px",
-    color: "#bbb",
+    fontSize: "12px",
+    fontWeight: 400,
+    color: "#6e6e73",
     margin: 0,
+    letterSpacing: "0",
   },
 }
