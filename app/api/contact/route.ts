@@ -22,6 +22,8 @@ export async function POST(request: Request) {
     const YOUR_EMAIL = process.env.NEXT_PUBLIC_MAIL
 
     if (!NEXT_PUBLIC_RESEND_API_KEY || !YOUR_EMAIL) {
+      console.log(NEXT_PUBLIC_RESEND_API_KEY)
+      console.log(YOUR_EMAIL)
       console.log("=".repeat(60))
       console.log("📧 NUEVO MENSAJE DE CONTACTO (MODO PRUEBA)")
       console.log("=".repeat(60))
