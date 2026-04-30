@@ -44,7 +44,7 @@ export async function POST(request: Request) {
     const resend = new Resend(NEXT_PUBLIC_RESEND_API_KEY)
 
     const { data, error } = await resend.emails.send({
-      from: "Portafolio <fabiantrappr@site.cl>",
+      from: "Portafolio <info@fabiantrappr.site>",
       to: [YOUR_EMAIL],
       replyTo: email,
       subject: `Nuevo contacto de ${name}💼`,
