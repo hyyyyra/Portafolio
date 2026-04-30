@@ -22,20 +22,8 @@ export async function POST(request: Request) {
     const YOUR_EMAIL = process.env.NEXT_PUBLIC_MAIL
 
     if (!NEXT_PUBLIC_RESEND_API_KEY || !YOUR_EMAIL) {
-      console.log(NEXT_PUBLIC_RESEND_API_KEY)
-      console.log(YOUR_EMAIL)
-      console.log("=".repeat(60))
-      console.log("📧 NUEVO MENSAJE DE CONTACTO (MODO PRUEBA)")
-      console.log("=".repeat(60))
-      console.log(`👤 Nombre: ${name}`)
-      console.log(`📨 Email: ${email}`)
-      console.log(`📱 Teléfono: ${telefono || "No proporcionado"}`)
-      console.log(`💬 Mensaje: ${message}`)
-      console.log("=".repeat(60))
-      console.log("⚠️  Para recibir emails reales, configura:")
-      console.log("   1. RESEND_API_KEY (obtén una en resend.com)")
-      console.log("   2. MAIL_PERSONAL (tu correo de destino)")
-      console.log("=".repeat(60))
+      
+      console.log(`Falta: ${!NEXT_PUBLIC_RESEND_API_KEY ? 'NEXT_PUBLIC_RESEND_API_KEY' : ''}${!YOUR_EMAIL ? ' YOUR_EMAIL' : ''}${NEXT_PUBLIC_RESEND_API_KEY && YOUR_EMAIL ? 'Ninguna' : ''}`);
 
       return NextResponse.json(
         {
@@ -56,10 +44,10 @@ export async function POST(request: Request) {
     const resend = new Resend(NEXT_PUBLIC_RESEND_API_KEY)
 
     const { data, error } = await resend.emails.send({
-      from: "Portafolio <onboarding@resend.dev>",
+      from: "Portafolio <fabiantrappr@site.cl>",
       to: [YOUR_EMAIL],
       replyTo: email,
-      subject: `💼 Nuevo contacto de ${name}`,
+      subject: `Nuevo contacto de ${name}💼`,
       html,
     })
 
