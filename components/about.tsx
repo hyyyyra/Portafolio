@@ -40,26 +40,26 @@ export function About() {
           <p
             className={`transition-all duration-700 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
           >
-            Hola, soy Fabián, desarrollador de software Full Stack ubicado en Santiago, Chile.
-            Me dedico a construir soluciones digitales adaptadas a las necesidades tanto de clientes independientes, como de entornos corporativos.
+            Hola, soy Fabián — desarrollador Full Stack ubicado en Santiago, Chile. Me dedico a construir soluciones digitales que se adaptan a lo que realmente necesita cada proyecto, sin importar la escala de tu negocio.
           </p>
 
           <p
             className={`transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
           >
-            A lo largo de mi carrera he participado en proyectos de distintas escalas y sectores, 
-            destacando el servicio público, en donde me he pragmatizado como Desarrollador Analista dentro de la división TI del Servicio de Evaluación Ambiental (SEA).
-            Enfrentando desafíos técnicos complejos con metodologías ágiles y un fuerte criterio analítico.
+            Parte importante de mi experiencia viene del sector público: como Desarrollador Analista en la División TI del Servicio de Evaluación Ambiental (SEA), en donde trabajo con sistemas críticos que manejan grandes volúmenes de datos sensibles, donde un error no es solo un bug — tiene consecuencias reales. Eso me formó con un estándar alto de responsabilidad, atención al detalle y criterio para tomar decisiones técnicas bajo presión.
           </p>
           
-          {/*<p
+          <p
             className={`transition-all duration-700 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
           >
-            Me especializo en el desarrollo de aplicaciones web de punta a punta: desde el diseño
-            de bases de datos relacionales hasta interfaces modernas y reactivas. Trabajo con un
-            stack versátil — <strong>PHP, TypeScript, React, SQL y Linux</strong> — eligiendo siempre
-            la herramienta que mejor se adapta a la necesidad.
-          </p>*/}
+También gané una visión de gestión integral: coordinando equipos, administrando tiempos y recursos, y entregando dentro de estructuras complejas. Esa perspectiva de punta a punta — técnica y humana — es lo que traigo a cada proyecto que tomo.
+          </p>
+
+          <p
+            className={`transition-all duration-700 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+          >
+            Si tienes algo que construir o mejorar, cuéntame de qué se trata. Me interesa entender tu contexto antes de proponer cualquier solución.
+          </p>
           
         </div>
       </div>
