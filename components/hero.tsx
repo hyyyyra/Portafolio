@@ -86,7 +86,7 @@ export function Hero() {
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-balance">
               Fabián Trapp Rodríguez
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground">Desarrollador de Sistemas Full Stack</p>
+            <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground">Desarrollo de Software y Soluciones Digitales</p>
           </div>
 
           <div className="flex gap-2 sm:gap-1 pt-1 sm:pt-1">
