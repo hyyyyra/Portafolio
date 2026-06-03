@@ -37,28 +37,24 @@ export function About() {
         </h2>
 
         <div className="space-y-5 sm:space-y-6 text-base sm:text-lg leading-relaxed">
-          <p
-            className={`transition-all duration-700 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
-          >
-            Hola, soy Fabián — desarrollador Full Stack ubicado en Santiago, Chile. Me dedico a construir soluciones digitales que se adaptan a lo que realmente necesita cada proyecto, sin importar la escala de tu negocio.
+          <p className={`transition-all duration-700 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
+            Hola, soy Fabián — desarrollador de software y analista de sistemas ubicado en Santiago, Chile. Me dedico a construir soluciones que ayudan a empresas y emprendedores a transformar necesidades reales en herramientas digitales que sean útiles, confiables y sostenibles en el tiempo.
           </p>
 
-          <p
-            className={`transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
-          >
-            Parte importante de mi experiencia viene del sector público: como Desarrollador Analista en la División TI del Servicio de Evaluación Ambiental (SEA), en donde trabajo con sistemas críticos que manejan grandes volúmenes de datos sensibles, donde un error no es solo un bug — tiene consecuencias reales. Eso me formó con un estándar alto de responsabilidad, atención al detalle y criterio para tomar decisiones técnicas bajo presión.
+          <p className={`transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
+            Mi experiencia profesional se ha desarrollado trabajando con sistemas críticos dentro del Servicio de Evaluación Ambiental (SEA). Allí colaboro en plataformas que gestionan grandes volúmenes de información y procesos donde la precisión no es opcional. Ese entorno me enseñó a trabajar con responsabilidad, prestar atención a los detalles y tomar decisiones técnicas considerando siempre el impacto que tendrán en las personas y organizaciones que utilizan el sistema.
           </p>
           
-          <p
-            className={`transition-all duration-700 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
-          >
-También gané una visión de gestión integral: coordinando equipos, administrando tiempos y recursos, y entregando dentro de estructuras complejas. Esa perspectiva de punta a punta — técnica y humana — es lo que traigo a cada proyecto que tomo.
+          <p className={`transition-all duration-700 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
+            Con el tiempo también he asumido responsabilidades que van más allá del desarrollo: coordinación de equipos, planificación de tareas, gestión de recursos y seguimiento de proyectos. Gracias a ello, puedo comprender tanto los desafíos técnicos como las necesidades operativas y de negocio detrás de cada iniciativa.
           </p>
 
-          <p
-            className={`transition-all duration-700 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
-          >
-            Si tienes algo que construir o mejorar, cuéntame de qué se trata. Me interesa entender tu contexto antes de proponer cualquier solución.
+          <p className={`transition-all duration-700 delay-400 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
+            Mi forma de trabajar es simple: primero entender el problema, luego proponer la solución. Antes de escribir una línea de código, me interesa conocer el contexto, los objetivos y las expectativas del proyecto para asegurar que la tecnología aporte valor real y no se convierta en una complejidad adicional.
+          </p>
+
+          <p className={`transition-all duration-700 delay-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
+            Si tienes una idea que desarrollar, un proceso que optimizar o una plataforma que mejorar, estaré encantado de conocer tu proyecto y explorar cómo puedo ayudarte.
           </p>
           
         </div>
