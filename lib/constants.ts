@@ -12,7 +12,7 @@ export const NAV_ITEMS = [
   { id: "inicio", label: "Inicio" },
   { id: "sobre-mi", label: "Sobre mí" },
   //{ id: "experiencia", label: "Experiencia" },
-  //{ id: "proyectos", label: "Proyectos" },
+  { id: "proyectos", label: "Proyectos" },
   { id: "contacto", label: "Contacto" },
 ] as const
 
