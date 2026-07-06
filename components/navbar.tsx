@@ -15,7 +15,7 @@ export function Navbar() {
       setIsScrolled(window.scrollY > 20)
 
       // Detectar la sección activa
-      const sections = ["inicio", "sobre-mi", "experiencia", "contacto"]
+      const sections = NAV_ITEMS.map((item) => item.id)
       const scrollPosition = window.scrollY + 100
 
       for (const section of sections) {

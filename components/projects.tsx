@@ -73,16 +73,11 @@ export function Projects() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-8">
           {projects.map((project, index) => (
-            <a
-              key={index}
-              href={project.demo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block"
-            >
               <Card
+                key={index}
                 className={`overflow-hidden group hover:shadow-lg hover:scale-[1.02] transition-all duration-500 cursor-pointer h-full ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
                 style={{ transitionDelay: `${index * 150}ms` }}
+                onClick={() => window.open(project.demo, "_blank", "noopener,noreferrer")}
               >
               <div className="relative aspect-video overflow-hidden bg-muted">
                 <Image
@@ -107,7 +102,10 @@ export function Projects() {
                   ))}
                 </div>
 
-                <div className="flex flex-wrap gap-2 sm:gap-3 pt-2">
+                <div
+                  className="flex flex-wrap gap-2 sm:gap-3 pt-2"
+                  onClick={(e) => e.stopPropagation()}
+                >
                   <Button
                     variant="outline"
                     size="sm"
@@ -133,7 +131,6 @@ export function Projects() {
                 </div>
               </div>
             </Card>
-            </a>
           ))}
         </div>
       </div>

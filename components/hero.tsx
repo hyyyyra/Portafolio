@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { useEffect, useRef, useState } from "react"
 
 const TERMINAL_LINES = [
-  { prefix: "$", command: "node greeting.js", delay: 400 },
+  { prefix: "$", command: "node greeting.js", delay: 300 },
   { prefix: ">", command: "", delay: 900, isOutput: true },
   { prefix: "$", command: "■", delay: 0, isCursor: true },
 ]
