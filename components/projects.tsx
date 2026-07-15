@@ -13,8 +13,8 @@ const projects = [
     description:
       "Controla tu dinero con claridad y toma mejores decisiones financieras de manera simple.",
     image: "/lukas_page.png",
-    tags: ["React", "TypeScript", "Supabase", "Tailwind CSS"],
-    github: "https://github.com/hyyyyra/Lukas",
+    tags: ["PHP", "TypeScript", "React", "Supabase"],
+    github: "https://github.com/hyyyyra/lukas-personal-finance",
     demo: "https://lukas-ecru.vercel.app/",
   },
   /*{
