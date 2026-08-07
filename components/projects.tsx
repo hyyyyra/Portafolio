@@ -79,13 +79,23 @@ export function Projects() {
                 style={{ transitionDelay: `${index * 150}ms` }}
                 onClick={() => window.open(project.demo, "_blank", "noopener,noreferrer")}
               >
-              <div className="relative aspect-video overflow-hidden bg-muted">
-                <Image
-                  src={project.image || "/placeholder.svg"}
-                  alt={project.title}
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-500"
-                />
+              <div className="bg-muted">
+                <div className="flex items-center gap-1.5 px-3 py-2 border-b border-border/60 bg-muted/80">
+                  <span className="w-2.5 h-2.5 rounded-full bg-red-500/70" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/70" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-green-500/70" />
+                  <span className="ml-2 flex-1 truncate rounded-full bg-background/70 px-3 py-1 text-[11px] font-mono text-muted-foreground text-center">
+                    {new URL(project.demo).host}
+                  </span>
+                </div>
+                <div className="relative aspect-video overflow-hidden">
+                  <Image
+                    src={project.image || "/placeholder.svg"}
+                    alt={project.title}
+                    fill
+                    className="object-cover object-top group-hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
               </div>
 
               <div className="p-4 sm:p-6 space-y-3 sm:space-y-4">

@@ -3,7 +3,7 @@ export const PERSONAL_INFO = {
   name: "Fabián Trapp Rodríguez",
   role: "Desarrollador Full Stack",
   description:
-    "Creo soluciones web de alto impacto que convierten visitantes en clientes. Especializado en transformar ideas en productos digitales escalables que generan resultados medibles para tu negocio.",
+    "Diseño y desarrollo soluciones web de alto impacto: transformo ideas en productos digitales escalables que generan resultados medibles.",
   email: "fabiantrappf9@gmail.com",
 }
 
@@ -11,7 +11,7 @@ export const PERSONAL_INFO = {
 export const NAV_ITEMS = [
   { id: "inicio", label: "Inicio" },
   { id: "sobre-mi", label: "Sobre mí" },
-  //{ id: "experiencia", label: "Experiencia" },
+  { id: "experiencia", label: "Experiencia" },
   { id: "proyectos", label: "Proyectos" },
   { id: "contacto", label: "Contacto" },
 ] as const
@@ -28,7 +28,7 @@ export const SECTION_IDS = {
   hero: "inicio",
   about: "sobre-mi",
   experience: "experiencia",
-  //projects: "proyectos",
+  projects: "proyectos",
   contact: "contacto",
 } as const
 

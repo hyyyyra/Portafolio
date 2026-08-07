@@ -58,7 +58,7 @@ export function Navbar() {
                 key={item.id}
                 variant="ghost"
                 onClick={() => scrollToSection(item.id)}
-                className={`relative transition-all duration-200 ${activeSection === item.id ? "text-foreground" : "text-muted-foreground hover:text-white"
+                className={`relative transition-all duration-200 ${activeSection === item.id ? "text-foreground" : "text-muted-foreground"
                   }`}
               >
                 {item.label}
@@ -91,7 +91,7 @@ export function Navbar() {
               onClick={() => scrollToSection(item.id)}
               className={`w-full text-left px-4 py-3 rounded-lg transition-all duration-200 ${activeSection === item.id
                 ? "bg-accent/10 text-foreground font-medium"
-                : "text-muted-foreground hover:bg-accent/5 hover:text-white"
+                : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
                 }`}
             >
               {item.label}

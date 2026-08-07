@@ -9,16 +9,16 @@ const experiences = [
     role: "Desarrollador Analista",
     company: "Servicio de Evaluación Ambiental",
     description:
-      "Desarrollo de software web analizando necesidades. Gestión de incidentes contingentes mediante soluciones tecnológicas en Gran Santiago.",
-    skills: ["PHP", "SQL", "JS", "TS", "React", "Linux"],
+      "Rol orientado a la resolución de problemas técnicos y la mejora continua de sistemas críticos, con foco en la precisión, la responsabilidad y el impacto real de cada decisión.",
+    skills: ["Resolución de problemas", "Pensamiento analítico", "PHP", "SQL", "React", "Linux"],
   },
   {
     period: "Enero 2022 — Junio 2022",
     role: "Asistente de Coordinador Logístico",
     company: "MARGOMZ",
     description:
-      "Apoyo en procesos de logística operativa, análisis de capacidades y mejora de tiempos de respuesta en San Antonio, Región de Valparaíso.",
-    skills: ["Gestión", "Logística", "Análisis"],
+      "Rol enfocado en la coordinación operativa y el trabajo en equipo dentro de entornos de alta exigencia, desarrollando capacidad de organización, adaptabilidad y gestión bajo presión.",
+    skills: ["Coordinación de equipos", "Organización", "Adaptabilidad", "Trabajo bajo presión"],
   },
 ]
 
@@ -30,7 +30,7 @@ const educations = [
   },
   {
     period: "2022 — 2024",
-    role: "Técnico, Programación y Análisis de Sistemas",
+    role: "Técnico en Programación y Análisis de Sistemas",
     company: "Instituto Profesional AIEP",
   },
   {

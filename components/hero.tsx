@@ -3,6 +3,7 @@
 import { Github, Linkedin, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useEffect, useRef, useState } from "react"
+import { PERSONAL_INFO, SOCIAL_LINKS } from "@/lib/constants"
 
 const TERMINAL_LINES = [
   { prefix: "$", command: "node greeting.js", delay: 300 },
@@ -14,10 +15,6 @@ const OUTPUT_TEXT = 'Greeting: "Hola, mi nombre es Fabián, y me especializo en 
 const TYPING_SPEED = 40
 
 export function Hero() {
-
-  const URL_GIT = process.env.NEXT_PUBLIC_URL_GIT;
-  const URL_LINKEDIN = process.env.NEXT_PUBLIC_URL_LINKEDIN
-  const URL_MAIL = process.env.NEXT_PUBLIC_MAIL_PERSONAL
 
   const [isVisible, setIsVisible] = useState(false)
   const [visibleLines, setVisibleLines] = useState<number[]>([])
@@ -86,25 +83,29 @@ export function Hero() {
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-balance">
               Fabián Trapp Rodríguez
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground">Desarrollo de Software y Soluciones Digitales</p>
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-xl leading-relaxed text-pretty">
+              {PERSONAL_INFO.description}
+            </p>
           </div>
 
-          <div className="flex gap-2 sm:gap-1 pt-1 sm:pt-1">
-            <Button variant="ghost" size="icon" asChild className="hover:scale-110 transition-transform duration-300 hover:text-white">
-              <a href={URL_GIT} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                <Github className="h-8 w-8" />
-              </a>
-            </Button>
-            <Button variant="ghost" size="icon" asChild className="hover:scale-110 transition-transform duration-300 hover:text-white">
-              <a href={URL_LINKEDIN} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                <Linkedin className="h-8 w-8" />
-              </a>
-            </Button>
-            <Button variant="ghost" size="icon" asChild className="hover:scale-110 transition-transform duration-300 hover:text-white">
-              <a href={`mailto:${URL_MAIL}`} aria-label="Email">
-                <Mail className="h-8 w-8" />
-              </a>
-            </Button>
+          <div className="space-y-2 pt-1 sm:pt-1">
+            <div className="flex gap-2 sm:gap-1">
+              <Button variant="ghost" size="icon" asChild className="hover:scale-110 transition-transform duration-300">
+                <a href={SOCIAL_LINKS.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                  <Github className="h-8 w-8" />
+                </a>
+              </Button>
+              <Button variant="ghost" size="icon" asChild className="hover:scale-110 transition-transform duration-300">
+                <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                  <Linkedin className="h-8 w-8" />
+                </a>
+              </Button>
+              <Button variant="ghost" size="icon" asChild className="hover:scale-110 transition-transform duration-300">
+                <a href={SOCIAL_LINKS.email} aria-label="Email">
+                  <Mail className="h-8 w-8" />
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
 
