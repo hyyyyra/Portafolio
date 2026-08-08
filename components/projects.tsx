@@ -15,7 +15,7 @@ const projects = [
     image: "/lukas_page.png",
     tags: ["PHP", "TypeScript", "React", "Supabase"],
     github: "https://github.com/hyyyyra/lukas-personal-finance",
-    demo: "https://lukas-ecru.vercel.app/",
+    demo: "https://lukas-personal-finance.vercel.app/",
   },
   /*{
     title: "Task Management App",
