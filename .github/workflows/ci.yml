@@ -46,7 +46,6 @@ jobs:
   security-audit:
     name: Security audit (advisory)
     runs-on: ubuntu-latest
-    continue-on-error: true
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
@@ -57,4 +56,9 @@ jobs:
           node-version: 20
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - run: pnpm audit --audit-level=high
+      # continue-on-error a nivel de STEP: si hay vulnerabilidades el step
+      # se marca con warning pero el job termina en verde (no bloquea el PR).
+      # Ponerlo a nivel de job dejaba el check en rojo aunque no bloqueara.
+      - name: Audit (advisory)
+        run: pnpm audit --audit-level=high
+        continue-on-error: true
