@@ -11,7 +11,7 @@ export function Footer() {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           {/* Copyright */}
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Fabián Trapp Rodríguez.
+            © {new Date().getFullYear()} Fabián Trapp Rodríguez - Brippez.
           </p>
 
           {/* Social Links */}
